@@ -1,12 +1,13 @@
-import { Metadata } from '@grpc/grpc-js';
 import { Controller } from '@nestjs/common';
 import { GrpcMethod } from '@nestjs/microservices';
 import { Observable } from 'rxjs';
+import { Empty } from 'src/google/protobuf/empty';
 import {
   Hero,
   HeroById,
   HeroesServiceController,
   HeroesServiceControllerMethods,
+  HeroList,
 } from './hero';
 
 @HeroesServiceControllerMethods()
@@ -18,11 +19,12 @@ export class HeroController implements HeroesServiceController {
   ];
 
   @GrpcMethod('HeroesService', 'FindOne')
-  findOne(
-    request: HeroById,
-    metadata?: Metadata,
-  ): Hero | Promise<Hero> | Observable<Hero> {
-    console.log(metadata);
+  findOne(request: HeroById): Hero | Promise<Hero> | Observable<Hero> {
     return this.items.find(({ id }) => id === request.id);
+  }
+
+  @GrpcMethod('HeroesService', 'GetAll')
+  getAll(request: Empty): Promise<HeroList> | Observable<HeroList> | HeroList {
+    return { heroes: this.items };
   }
 }

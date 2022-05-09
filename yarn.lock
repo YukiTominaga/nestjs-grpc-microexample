@@ -2677,6 +2677,11 @@ globby@^11.0.4:
     merge2 "^1.4.1"
     slash "^3.0.0"
 
+google-protobuf@^3.19.4:
+  version "3.20.1"
+  resolved "https://registry.yarnpkg.com/google-protobuf/-/google-protobuf-3.20.1.tgz#1b255c2b59bcda7c399df46c65206aa3c7a0ce8b"
+  integrity sha512-XMf1+O32FjYIV3CYu6Tuh5PNbfNEU5Xu22X+Xkdb/DUexFlCzhvv7d5Iirm4AOwn8lv4al1YvIhzGrg2j9Zfzw==
+
 graceful-fs@^4.1.2, graceful-fs@^4.1.6, graceful-fs@^4.2.0, graceful-fs@^4.2.4, graceful-fs@^4.2.9:
   version "4.2.10"
   resolved "https://registry.yarnpkg.com/graceful-fs/-/graceful-fs-4.2.10.tgz#147d3a006da4ca3ce14728c7aefc287c367d7a6c"
@@ -3781,6 +3786,17 @@ neo-async@^2.6.2:
   resolved "https://registry.yarnpkg.com/neo-async/-/neo-async-2.6.2.tgz#b4aafb93e3aeb2d8174ca53cf163ab7d7308305f"
   integrity sha512-Yd3UES5mWCSqR+qNT93S3UoYUkqAZ9lLg8a7g9rimsWmYGK8cVToA4/sF3RrshdyV3sAGMXVUmpMYOw+dLpOuw==
 
+nestjs-grpc-reflection@^0.0.9:
+  version "0.0.9"
+  resolved "https://registry.yarnpkg.com/nestjs-grpc-reflection/-/nestjs-grpc-reflection-0.0.9.tgz#20f7637f955175d6ee1189587e39b5271ae6c732"
+  integrity sha512-yjWYQ/jjNZz3P3EdtGM/6iJ4fiwGQm0vM6+3l54lqpyWw3Jfu7B4j3XfT7TgJhnxEsMAymP7lTYzPGEjQnkVCw==
+  dependencies:
+    google-protobuf "^3.19.4"
+    protobufjs "^6.11.2"
+    reflect-metadata "^0.1.13"
+    rxjs "^7.2.0"
+    ts-case-convert "^2.0.1"
+
 node-emoji@1.11.0:
   version "1.11.0"
   resolved "https://registry.yarnpkg.com/node-emoji/-/node-emoji-1.11.0.tgz#69a0150e6946e2f115e9d7ea4df7971e2628301c"
@@ -4079,7 +4095,7 @@ prompts@^2.0.1:
     kleur "^3.0.3"
     sisteransi "^1.0.5"
 
-protobufjs@^6.10.0, protobufjs@^6.8.8:
+protobufjs@^6.10.0, protobufjs@^6.11.2, protobufjs@^6.8.8:
   version "6.11.2"
   resolved "https://registry.yarnpkg.com/protobufjs/-/protobufjs-6.11.2.tgz#de39fabd4ed32beaa08e9bb1e30d08544c1edf8b"
   integrity sha512-4BQJoPooKJl2G9j3XftkIXjoC9C0Av2NOrWmbLWT1vH32GcSUHjM0Arra6UfTsVyfMAuFzaLucXn1sadxJydAw==
@@ -4763,6 +4779,11 @@ tree-kill@1.2.2:
   version "1.2.2"
   resolved "https://registry.yarnpkg.com/tree-kill/-/tree-kill-1.2.2.tgz#4ca09a9092c88b73a7cdc5e8a01b507b0790a0cc"
   integrity sha512-L0Orpi8qGpRG//Nd+H90vFB+3iHnue1zSSGmNOOCh1GLJ7rUKVwV2HvijphGQS2UmhUZewS9VgvxYIdgr+fG1A==
+
+ts-case-convert@^2.0.1:
+  version "2.0.2"
+  resolved "https://registry.yarnpkg.com/ts-case-convert/-/ts-case-convert-2.0.2.tgz#2d5414638c480e3416c9fe2f98074805b8db9dae"
+  integrity sha512-vdKfx1VAdpvEBOBv5OpVu5ZFqRg9HdTI4sYt6qqMeICBeNyXvitrarCnFWNDAki51IKwCyx+ZssY46Q9jH5otA==
 
 ts-jest@^27.0.3:
   version "27.1.4"

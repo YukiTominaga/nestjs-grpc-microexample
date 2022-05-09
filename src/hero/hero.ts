@@ -3,7 +3,7 @@ import { GrpcMethod, GrpcStreamMethod } from '@nestjs/microservices';
 import * as Long from 'long';
 import * as _m0 from 'protobufjs/minimal';
 import { Observable } from 'rxjs';
-import { Metadata } from '@grpc/grpc-js';
+import { Empty } from '../google/protobuf/empty';
 
 export const protobufPackage = 'hero';
 
@@ -16,22 +16,27 @@ export interface Hero {
   name: string;
 }
 
+export interface HeroList {
+  heroes: Hero[];
+}
+
 export const HERO_PACKAGE_NAME = 'hero';
 
 export interface HeroesServiceClient {
-  findOne(request: HeroById, metadata?: Metadata): Observable<Hero>;
+  findOne(request: HeroById): Observable<Hero>;
+
+  getAll(request: Empty): Observable<HeroList>;
 }
 
 export interface HeroesServiceController {
-  findOne(
-    request: HeroById,
-    metadata?: Metadata,
-  ): Promise<Hero> | Observable<Hero> | Hero;
+  findOne(request: HeroById): Promise<Hero> | Observable<Hero> | Hero;
+
+  getAll(request: Empty): Promise<HeroList> | Observable<HeroList> | HeroList;
 }
 
 export function HeroesServiceControllerMethods() {
   return function (constructor: Function) {
-    const grpcMethods: string[] = ['findOne'];
+    const grpcMethods: string[] = ['findOne', 'getAll'];
     for (const method of grpcMethods) {
       const descriptor: any = Reflect.getOwnPropertyDescriptor(
         constructor.prototype,
