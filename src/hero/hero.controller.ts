@@ -1,8 +1,8 @@
 import { Controller } from '@nestjs/common';
 import { GrpcMethod } from '@nestjs/microservices';
 import { Observable } from 'rxjs';
-import { Empty } from 'src/google/protobuf/empty';
 import {
+  Empty,
   Hero,
   HeroById,
   HeroesServiceController,

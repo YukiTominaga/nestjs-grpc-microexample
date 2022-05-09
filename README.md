@@ -22,6 +22,37 @@
   <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
   [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
 
+## How to call by grpcurl
+
+```bash
+$ grpcurl -plaintext localhost:50001 list
+grpc.reflection.v1alpha.ServerReflection
+hero.HeroesService
+```
+
+```bash
+$ grpcurl -plaintext localhost:50001 hero.HeroesService.GetAll
+{
+  "heroes": [
+    {
+      "id": 1,
+      "name": "John"
+    },
+    {
+      "id": 2,
+      "name": "Doe"
+    }
+  ]
+}
+```
+
+```bash
+$ grpcurl -plaintext -d '{ "id": 1 }' localhost:50001 hero.HeroesService.FindOne
+{
+  "id": 1,
+  "name": "John"
+}
+```
 ## Description
 
 [Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.

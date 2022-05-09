@@ -3,7 +3,6 @@ import { GrpcMethod, GrpcStreamMethod } from '@nestjs/microservices';
 import * as Long from 'long';
 import * as _m0 from 'protobufjs/minimal';
 import { Observable } from 'rxjs';
-import { Empty } from '../google/protobuf/empty';
 
 export const protobufPackage = 'hero';
 
@@ -19,6 +18,8 @@ export interface Hero {
 export interface HeroList {
   heroes: Hero[];
 }
+
+export interface Empty {}
 
 export const HERO_PACKAGE_NAME = 'hero';
 
