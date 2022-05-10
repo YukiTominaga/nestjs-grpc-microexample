@@ -9,4 +9,4 @@ RUN yarn install --prod
 
 ENTRYPOINT [ "node" ]
 
-CMD [ "dist/src/main.js" ]
+CMD [ "dist/main.js" ]
